@@ -1,0 +1,47 @@
+echo "#So-Tai-Khoan" >> README.md 
+git init 
+git add README.md 
+git commit -m "first commit" 
+git nhánh -M main 
+git remote add Origin https://github.com/nguyenlenhaka/So- Tai-Khoan.git 
+git push -u Origin main
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Account Information</title>
+</head>
+<body>
+    <div>
+        <p><strong>Field 1:</strong></p>
+        <p>Title: Account Number</p>
+        <p>Content: <span id="field1">19031934423015</span></p>
+        <button onclick="copyToClipboard('field1')">Copy</button>
+    </div>
+    <div>
+        <p><strong>Field 2:</strong></p>
+        <p>Title: Bank</p>
+        <p>Content: <span id="field2">Techcombank</span></p>
+        <button onclick="copyToClipboard('field2')">Copy</button>
+    </div>
+    <div>
+        <p><strong>Field 3:</strong></p>
+        <p>Title: Account Holder</p>
+        <p>Content: <span id="field3">LE THI THANH NGOC</span></p>
+        <button onclick="copyToClipboard('field3')">Copy</button>
+    </div>
+
+    <script>
+        function copyToClipboard(fieldId) {
+            var copyText = document.getElementById(fieldId).innerText;
+            var textArea = document.createElement("textarea");
+            textArea.value = copyText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert("Copied: " + copyText);
+        }
+    </script>
+</body>
+</html>
+
